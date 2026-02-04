@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animate elements on scroll
+    // Animate elements on scroll - trigger EARLY before element is fully visible
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0,
+        rootMargin: '100px 0px 100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
