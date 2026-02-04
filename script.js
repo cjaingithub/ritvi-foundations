@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Add animation classes - INSTANT animations, no stagger delay
+    // Add animation classes - Snappy but VISIBLE animations
     const sections = [
         '.hero-stats .stat',
         '.about-features .feature',
@@ -84,10 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach(sectionSelector => {
         const elements = document.querySelectorAll(sectionSelector);
-        elements.forEach((el) => {
+        elements.forEach((el, index) => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(10px)';
-            el.style.transition = 'opacity 0.05s ease, transform 0.05s ease';
+            el.style.transform = 'translateY(20px)';
+            // 0.4s duration = fast but invisible
+            // 0.05s stagger = subtle cascade effect
+            el.style.transition = `opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.05}s, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.05}s`;
             observer.observe(el);
         });
     });
