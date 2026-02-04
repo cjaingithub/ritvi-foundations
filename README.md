@@ -1,12 +1,12 @@
-# 🌱 Ritvi Foundations
+# 🚀 Antigravity
 
 **Empowering Startups to Succeed**
 
-A modern, responsive website for Ritvi Foundations - a nonprofit organization providing world-class mentorship, funding guidance, and strategic support to help startups in San Diego scale and thrive.
+A modern, responsive website for Antigravity - a nonprofit organization providing world-class mentorship, funding guidance, and strategic support to help startups in San Diego scale and thrive.
 
 ## 🚀 Live Site
 
-Visit: [https://cjaingithub.github.io/ritvi-foundations](https://cjaingithub.github.io/ritvi-foundations)
+Visit: [https://cjaingithub.github.io/antigravity](https://cjaingithub.github.io/antigravity)
 
 ## ✨ Features
 
@@ -34,17 +34,17 @@ Visit: [https://cjaingithub.github.io/ritvi-foundations](https://cjaingithub.git
 
 ## 📞 Contact
 
-- **Email**: hello@ritvifoundations.org
+- **Email**: hello@antigravity.org
 - **Phone**: (858) 555-0123
 - **Address**: 17190 Bernardo Center Dr Suite 200, San Diego, CA 92128
 
 ## 📱 Social Media
 
-- [LinkedIn](https://linkedin.com/company/ritvi-foundations)
-- [Twitter/X](https://twitter.com/ritvifoundation)
-- [Instagram](https://instagram.com/ritvifoundations)
-- [Facebook](https://facebook.com/ritvifoundations)
+- [LinkedIn](https://linkedin.com/company/antigravity)
+- [Twitter/X](https://twitter.com/antigravity)
+- [Instagram](https://instagram.com/antigravity)
+- [Facebook](https://facebook.com/antigravity)
 
 ---
 
-© 2026 Ritvi Foundations. A 501(c)(3) nonprofit organization.
+© 2026 Antigravity. A 501(c)(3) nonprofit organization.
