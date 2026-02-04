@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animate elements on scroll - trigger EARLY before element is fully visible
+    // Animate elements on scroll - Expert Configuration
     const observerOptions = {
-        threshold: 0,
-        rootMargin: '100px 0px 100px 0px'
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '0px 0px -50px 0px' // Offset to ensure user sees the movement
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -71,35 +71,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Add animation classes - Smooth and elegant animations
+    // Group elements by parent section to ensure animations start fresh for each section
+    // This prevents the "cumulative delay" issue where lower sections wait forever
     const sections = [
-        '.hero-stats .stat',
-        '.about-features .feature',
-        '.services-grid .service-card',
-        '.programs-grid .program-card',
-        '.team-grid .team-card',
-        '.testimonials .testimonial-card',
-        '.requirements-grid .requirement-card'
+        '.hero-stats',
+        '.about-features',
+        '.services-grid',
+        '.programs-grid',
+        '.team-grid',
+        '.testimonials',
+        '.requirements-grid'
     ];
 
-    sections.forEach(sectionSelector => {
-        const elements = document.querySelectorAll(sectionSelector);
-        elements.forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            // 0.8s duration = slower, more elegant (reduced speed by half)
-            // 0.1s stagger = more distinct cascade
-            el.style.transition = `opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.1}s, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.1}s`;
-            observer.observe(el);
-        });
+    sections.forEach(parentSelector => {
+        const parent = document.querySelector(parentSelector);
+        if (parent) {
+            // Select direct children to animate
+            const children = parent.children;
+            Array.from(children).forEach((el, index) => {
+                // Initial State
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.filter = 'blur(10px)'; // Add blur for premium feel
+
+                // Premium Transition:
+                // Duration: 0.8s (Smooth)
+                // Stagger: 0.1s (distinct flow)
+                // Easing: cubic-bezier(0.2, 0.8, 0.2, 1) (Soft ease-out)
+                el.style.transition = `
+                    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.1}s,
+                    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.1}s,
+                    filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.1}s
+                `;
+
+                observer.observe(el);
+            });
+        }
     });
 
-    // Add animate-in styles
+    // Add animate-in styles dynamically
     const style = document.createElement('style');
     style.textContent = `
         .animate-in {
             opacity: 1 !important;
             transform: translateY(0) !important;
+            filter: blur(0px) !important;
         }
     `;
     document.head.appendChild(style);
