@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elements.forEach((el) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(10px)';
-            el.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+            el.style.transition = 'opacity 0.05s ease, transform 0.05s ease';
             observer.observe(el);
         });
     });
