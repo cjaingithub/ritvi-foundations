@@ -71,15 +71,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Add animation classes
+    // Add animation classes - FAST animations
     const animateElements = document.querySelectorAll(
         '.service-card, .program-card, .team-card, .testimonial-card, .stat, .feature, .requirement-card'
     );
 
     animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.3s ease ${index * 0.03}s, transform 0.3s ease ${index * 0.03}s`;
         observer.observe(el);
     });
 
