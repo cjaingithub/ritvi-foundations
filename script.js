@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Add animation classes - FAST animations grouped by section
+    // Add animation classes - INSTANT animations, no stagger delay
     const sections = [
         '.hero-stats .stat',
         '.about-features .feature',
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach(sectionSelector => {
         const elements = document.querySelectorAll(sectionSelector);
-        elements.forEach((el, index) => {
+        elements.forEach((el) => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(15px)';
-            el.style.transition = `opacity 0.25s ease ${index * 0.05}s, transform 0.25s ease ${index * 0.05}s`;
+            el.style.transform = 'translateY(10px)';
+            el.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
             observer.observe(el);
         });
     });
