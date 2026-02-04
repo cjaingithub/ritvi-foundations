@@ -71,16 +71,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Add animation classes - FAST animations
-    const animateElements = document.querySelectorAll(
-        '.service-card, .program-card, .team-card, .testimonial-card, .stat, .feature, .requirement-card'
-    );
+    // Add animation classes - FAST animations grouped by section
+    const sections = [
+        '.hero-stats .stat',
+        '.about-features .feature',
+        '.services-grid .service-card',
+        '.programs-grid .program-card',
+        '.team-grid .team-card',
+        '.testimonials .testimonial-card',
+        '.requirements-grid .requirement-card'
+    ];
 
-    animateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `opacity 0.3s ease ${index * 0.03}s, transform 0.3s ease ${index * 0.03}s`;
-        observer.observe(el);
+    sections.forEach(sectionSelector => {
+        const elements = document.querySelectorAll(sectionSelector);
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(15px)';
+            el.style.transition = `opacity 0.25s ease ${index * 0.05}s, transform 0.25s ease ${index * 0.05}s`;
+            observer.observe(el);
+        });
     });
 
     // Add animate-in styles
